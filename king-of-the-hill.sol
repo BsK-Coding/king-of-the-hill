@@ -1,9 +1,5 @@
 // SPDX-License-Identifier: MIT
 
-//Reseaux   Goerli
-//Account   0xD2E2535e000C0D9b31F99eeaAa9A51F9b099640b
-//Contract  
-
 pragma solidity ^0.8.0;
 
 /* IMPORT STATEMENTS */
