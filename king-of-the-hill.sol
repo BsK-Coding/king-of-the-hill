@@ -72,7 +72,7 @@ contract KingOfTheHill {
     // FUNCTION INTERNAL
     
     // FUNCTION PRIVATE
-    function _offer(address sender, uint256 amount) private {       //Incrémentera le solde du Smart contract du montant passé en offer
+    function _offerForPot(address sender, uint256 amount) private {       //Incrémentera le solde du Smart contract du montant passé en offer
         _balances[sender] += amount;
         emit Offered(sender, amount);
     }
