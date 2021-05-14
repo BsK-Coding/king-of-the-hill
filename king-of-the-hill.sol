@@ -21,7 +21,7 @@ contract KingOfTheHill {
     uint256 private _seed;                                      //10% du _pot
 
     /* EVENTS */
-    // event Offered(address indexed sender, uint256 value);
+    event Offered(address indexed sender, uint256 value);
     
     /* CONSTRUCTOR */
     constructor(address ownerPot_, uint256 pot_) payable {
@@ -52,7 +52,7 @@ contract KingOfTheHill {
     }
     
     // FUNCTION EXTERNAL
-    function offer() external payable {                         //Envoie "offer_" = msg.value dans "_offer" = msg.sender => Wallet vers Smart contract
+    function offer() external payable ownerPot {                         //Envoie "offer_" = msg.value dans "_offer" = msg.sender => Wallet vers Smart contract
         emit _offer(msg.sender, msg.value);
     }
     
@@ -74,6 +74,6 @@ contract KingOfTheHill {
     // FUNCTION PRIVATE
     function _offer(address sender, uint256 amount) private {       //Incrémentera le solde du Smart contract du montant passé en offer
         _balances[sender] += amount;
-        //emit Offered(sender, amount);
+        emit Offered(sender, amount);
     }
 }
